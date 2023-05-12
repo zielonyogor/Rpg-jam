@@ -9,7 +9,7 @@ public class EnterLevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        Debug.Log("shit");
         if (other.CompareTag("Player"))
         {
             Debug.Log("kurwa");
