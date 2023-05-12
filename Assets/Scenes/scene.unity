@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rb: {fileID: 1033189758}
 --- !u!50 &1033189758
 Rigidbody2D:
   serializedVersion: 4
@@ -369,7 +368,7 @@ GameObject:
   - component: {fileID: 1726507503}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
