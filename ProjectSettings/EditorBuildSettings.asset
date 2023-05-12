@@ -9,6 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/scene.unity
     guid: c3c54bc6ff343404081a0904838e22e4
+=======
+    path: Assets/Scenes/level2.unity
+    guid: f49ab6531cf73dd49840bb1a7ab5f63b
+>>>>>>> Stashed changes
   m_configObjects: {}
