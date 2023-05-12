@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
-  - Ground
-=======
   - door
->>>>>>> Stashed changes
+  - Ground
   layers:
   - Default
   - TransparentFX
