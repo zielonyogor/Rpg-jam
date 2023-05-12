@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class DisapearingBlock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float disappearTime = 2f;
+    private Collider2D coll;
+    private SpriteRenderer spriteRenderer;
+    
+    private void Start()
     {
+        coll = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("cos");
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(DisappearingCoroutine());
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator DisappearingCoroutine()
     {
-        
+        coll.enabled = false;
+        spriteRenderer.enabled = true;
+        yield return new WaitForSeconds(disappearTime);
+        Destroy(gameObject);
     }
+
+
 }
