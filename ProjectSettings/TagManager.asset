@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - platform1
   - Enemy
+  - cutscene
   layers:
   - Default
   - TransparentFX
