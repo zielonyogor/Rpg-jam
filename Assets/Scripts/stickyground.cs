@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class stickyground : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float slowDownFactor = 0.5f;
+    public PlayerMovement script;
+    private float startingSpeed;
+    private float slowedSpeed;
+    public bool isSlowed;
+
+    private void Start()
     {
-        
+        startingSpeed = script.moveSpeed;
+        slowedSpeed = slowDownFactor * startingSpeed;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isSlowed = true;
+            script.moveSpeed = slowedSpeed;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        isSlowed = false;
+        if (script.isGrounded)
+        {
+            script.moveSpeed = startingSpeed;
+        }
     }
 }
+
+
+
