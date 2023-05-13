@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private bool isRight;
     private Rigidbody2D rb;
     public Animator animator;
     public stickyground script;
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.AddForce(new Vector2(0, 1.5f*moveSpeed), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 1.5f * moveSpeed), ForceMode2D.Impulse);
             isGrounded = false;
         }
         if (Input.GetKeyDown(KeyCode.Z) && !isDashing && !script.isSlowed)
@@ -43,6 +44,25 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxisRaw("Horizontal");
         var moveVector = (Vector2)transform.position + new Vector2(dirX, 0f);
+        if (dirX > 0f)
+        {
+            isRight = true;
+        }
+        else if (dirX < 0f)
+        {
+            isRight = false;
+        }
+        if (rb.velocity.x < 0.1f)
+        {
+            if (isRight)
+            {
+                animator.SetBool("right", true);
+            }
+            else
+            {
+                animator.SetBool("right", false);
+            }
+        }
         gameObject.transform.position = Vector2.MoveTowards(transform.position, moveVector, Time.fixedDeltaTime * moveSpeed);
         //rb.velocity += new Vector2(dirX * moveSpeed, 0f) * Time.fixedDeltaTime;
         

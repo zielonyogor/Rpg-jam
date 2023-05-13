@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 34a4d4501fd44fc4aa9f59b25d8b1635
+guid: 3090fd6c27ad65b44aff3a3bf0f8ddc9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: turquise_0
+      name: Violet-right_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d6ac87d6ea9e644bb4c75de430263ac
-      internalID: 1274258142
+      spriteID: 60a4d1aae1ddb6342a5c907ac4f14ade
+      internalID: -1343784890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: turquise_1
+      name: Violet-right_1
       rect:
         serializedVersion: 2
         x: 64
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff43d40c05e972d4b94df6bb4d91565f
-      internalID: -2128934408
+      spriteID: 315f839f386b74e4697e28a444015252
+      internalID: 870037518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: turquise_2
+      name: Violet-right_2
       rect:
         serializedVersion: 2
         x: 128
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87cda0de7d39bfa46a8633ea6203d8d2
-      internalID: 1345135047
+      spriteID: 5804c226872bce545b8c5cc40b77b081
+      internalID: -415495904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: turquise_3
+      name: Violet-right_3
       rect:
         serializedVersion: 2
         x: 192
@@ -182,8 +182,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17849b1049482f2449667309790a8c3b
-      internalID: 96028570
+      spriteID: e87c2698d1f45544dbfc66e513f40a58
+      internalID: 625812443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Violet-right_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4416f52f555bcf4d9de6b7038d539b8
+      internalID: 1258109694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Violet-right_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa22b18055077e42b6e298a07ea3eaa
+      internalID: 1505458916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Violet-right_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f0076008e8b894e9035ce09ec8dbc8
+      internalID: -2126013959
       vertices: []
       indices: 
       edges: []
@@ -199,10 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      turquise_2: 1345135047
-      turquise_1: -2128934408
-      turquise_0: 1274258142
-      turquise_3: 96028570
+      Violet-right_0: -1343784890
+      Violet-right_3: 625812443
+      Violet-right_6: -2126013959
+      Violet-right_5: 1505458916
+      Violet-right_1: 870037518
+      Violet-right_4: 1258109694
+      Violet-right_2: -415495904
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

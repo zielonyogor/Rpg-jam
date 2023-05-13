@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 34a4d4501fd44fc4aa9f59b25d8b1635
+guid: 3dc4e54116439af48a6ce477ae98f303
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: turquise_0
+      name: 343808374_170991009257162_2592905794559586932_n (2)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d6ac87d6ea9e644bb4c75de430263ac
-      internalID: 1274258142
+      spriteID: cdd793c8832ac3e4fb0b8c432779bbe1
+      internalID: -573429875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: turquise_1
+      name: 343808374_170991009257162_2592905794559586932_n (2)_1
       rect:
         serializedVersion: 2
         x: 64
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff43d40c05e972d4b94df6bb4d91565f
-      internalID: -2128934408
+      spriteID: 3412b967cbe37ef419f72628594f3254
+      internalID: 1383602339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: turquise_2
+      name: 343808374_170991009257162_2592905794559586932_n (2)_2
       rect:
         serializedVersion: 2
         x: 128
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87cda0de7d39bfa46a8633ea6203d8d2
-      internalID: 1345135047
+      spriteID: 91e47d4dec50c3a4bb7231f548297071
+      internalID: 93865632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: turquise_3
+      name: 343808374_170991009257162_2592905794559586932_n (2)_3
       rect:
         serializedVersion: 2
         x: 192
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17849b1049482f2449667309790a8c3b
-      internalID: 96028570
+      spriteID: 7376ad68e48e0ab48bf0c2c13fcc44c1
+      internalID: 556451670
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      turquise_2: 1345135047
-      turquise_1: -2128934408
-      turquise_0: 1274258142
-      turquise_3: 96028570
+      343808374_170991009257162_2592905794559586932_n (2)_1: 1383602339
+      343808374_170991009257162_2592905794559586932_n (2)_0: -573429875
+      343808374_170991009257162_2592905794559586932_n (2)_2: 93865632
+      343808374_170991009257162_2592905794559586932_n (2)_3: 556451670
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
