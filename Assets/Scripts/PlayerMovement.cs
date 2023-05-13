@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-
+    public Animator animator;
     public stickyground script;
     public float moveSpeed = 5f;
     private float originalSpeed;
@@ -42,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         var moveVector = (Vector2)transform.position + new Vector2(dirX, 0f);
         gameObject.transform.position = Vector2.MoveTowards(transform.position, moveVector, Time.fixedDeltaTime * moveSpeed);
         //rb.velocity += new Vector2(dirX * moveSpeed, 0f) * Time.fixedDeltaTime;
+        
 
     }
     private IEnumerator Dash()
