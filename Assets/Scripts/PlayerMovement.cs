@@ -115,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
             if (isShielded)
             {
                 Debug.Log("rucham ci stara");
-                rb.AddForce(rb.velocity + new Vector2(0f,10f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0f,originalSpeed), ForceMode2D.Impulse);
                 isShielded = false;
             }
             else SceneManager.LoadScene(SceneManager.GetActiveScene().name);

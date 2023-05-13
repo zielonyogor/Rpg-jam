@@ -1,27 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CutScene : MonoBehaviour
 {
     public float cutsceneTime = 1f;
-    public GameObject b;
-    
+    public string cutSceneName = "scena";
+    public string nextLevelName = "scena";
+    private void OnTriggerEnter2D(Collider2D other)
+    {
 
-    private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Ta");
-            b.SetActive(true);
-            StartCoroutine(DisappearingCoroutine());
-        } 
+            StartCoroutine(CutSceneCoroutine());
+        }
     }
-    private IEnumerator DisappearingCoroutine()
+    private IEnumerator CutSceneCoroutine()
     {
-        Debug.Log("1");
+        SceneManager.LoadScene(cutSceneName);
         yield return new WaitForSeconds(cutsceneTime);
-        Debug.Log("2");
-        b.SetActive(false);
-        gameObject.SetActive(false);
+        SceneManager.LoadScene(nextLevelName);
     }
 }
