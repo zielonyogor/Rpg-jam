@@ -26,12 +26,4 @@ public class EnemyMomevent : MonoBehaviour
         // Update the position of the saw
         transform.position = new Vector2(x, y);
     }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log("kurwa");
-        if (other.gameObject.CompareTag("Player"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
 }
