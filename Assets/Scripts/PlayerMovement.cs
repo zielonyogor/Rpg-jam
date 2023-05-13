@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool isRight;
     private Rigidbody2D rb;
     public Animator animator;
     public stickyground script;
@@ -25,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         originalSpeed = moveSpeed;
-        isRight = true;
+        animator.SetBool("right", true);
+        animator.SetBool("run", false);
     }
 
     private void Update()
@@ -53,23 +53,20 @@ public class PlayerMovement : MonoBehaviour
         var moveVector = (Vector2)transform.position + new Vector2(dirX, 0f);
         if (dirX > 0f)
         {
-            isRight = true;
+            animator.SetBool("right", true);
+            animator.SetBool("run", true);
         }
         else if (dirX < 0f)
         {
-            isRight = false;
+
+            animator.SetBool("right", false);
+            animator.SetBool("run", true);
         }
-        if (rb.velocity.x < 0.1f)
+        else
         {
-            if (isRight)
-            {
-                animator.SetBool("right", true);
-            }
-            else
-            {
-                animator.SetBool("right", false);
-            }
+            animator.SetBool("run", false);
         }
+
         gameObject.transform.position = Vector2.MoveTowards(transform.position, moveVector, Time.fixedDeltaTime * moveSpeed);
         //rb.velocity += new Vector2(dirX * moveSpeed, 0f) * Time.fixedDeltaTime;
         

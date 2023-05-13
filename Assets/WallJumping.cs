@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class WallJumping : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public PlayerMovement script;
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
