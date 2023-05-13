@@ -31,8 +31,14 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if (Input.GetButtonDown("Jump") && isGrounded && !isDashing)
-        {
+        {   
+            if (!script.isSlowed)
+            {
+                rb.AddForce(new Vector2(0, 1f * originalSpeed), ForceMode2D.Impulse);
+            }
+            else {
             rb.AddForce(new Vector2(0, 1f * moveSpeed), ForceMode2D.Impulse);
+            }
             isGrounded = false;
         }
         if (Input.GetKeyDown(KeyCode.Z) && !isDashing && !script.isSlowed)
