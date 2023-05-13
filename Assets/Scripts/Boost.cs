@@ -9,8 +9,9 @@ public class Boost : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("your mom");
+            Destroy(this.gameObject);
             script.isShielded = true;
-            this.enabled = false;
         }
     }
 }

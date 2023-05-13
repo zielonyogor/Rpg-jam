@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7951240627874660022
+--- !u!1 &6855817240004479070
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8028289287828922809}
-  - component: {fileID: 9129316860391387902}
-  - component: {fileID: -220470427397214232}
+  - component: {fileID: 5605911538928485087}
+  - component: {fileID: 1823624464596880902}
+  - component: {fileID: 5509171575433129840}
   m_Layer: 0
-  m_Name: sticky
+  m_Name: Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8028289287828922809
+--- !u!4 &5605911538928485087
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7951240627874660022}
+  m_GameObject: {fileID: 6855817240004479070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.981342, y: 1.116889, z: 0}
+  m_LocalPosition: {x: 1.9456222, y: 2.756672, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9129316860391387902
+--- !u!212 &1823624464596880902
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7951240627874660022}
+  m_GameObject: {fileID: 6855817240004479070}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,18 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-220470427397214232
+--- !u!114 &5509171575433129840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7951240627874660022}
+  m_GameObject: {fileID: 6855817240004479070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c4baeae905ff4945a5fbdc08bac1a1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 875e019c48d176c4fb0926870dc4a91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowDownFactor: 0.5
   script: {fileID: 0}
-  isSlowed: 0
