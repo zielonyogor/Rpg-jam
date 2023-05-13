@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Wind : MonoBehaviour
 {
-    private float windInterval = 3f;
+    public float windInterval = 3f;
     private float windTimer = 0f;
     [SerializeField] float windForce = 5f;
     private bool isBlowing = false;
     public Rigidbody2D player_rb;
     private bool inArea = false;
+    public float direction = -1f;
 
     private void Update()
     {
@@ -28,7 +29,7 @@ public class Wind : MonoBehaviour
 
     private void Blow()
     {
-        Vector2 windDirection = new Vector2(-1f, 0f).normalized;
+        Vector2 windDirection = new Vector2(direction, 0f).normalized;
         player_rb.AddForce(windDirection * windForce, ForceMode2D.Impulse);
         Debug.Log("kupa");
     }

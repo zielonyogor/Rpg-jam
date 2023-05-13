@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72850809a03e51546a24b322ae041ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  windInterval: 3
   windForce: 5
   player_rb: {fileID: 2496642494726463477, guid: 28da5d406d5dc35409b07b3f2797c0e2, type: 3}
+  direction: -1
 --- !u!61 &5084631740468489394
 BoxCollider2D:
   m_ObjectHideFlags: 0

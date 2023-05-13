@@ -437,12 +437,20 @@ PrefabInstance:
       value: Wind
       objectReference: {fileID: 0}
     - target: {fileID: 1304192751867347087, guid: af8289a74cc7a5543a8243970a046b9f, type: 3}
+      propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304192751867347087, guid: af8289a74cc7a5543a8243970a046b9f, type: 3}
       propertyPath: player_rb
       value: 
       objectReference: {fileID: 658773682}
     - target: {fileID: 1304192751867347087, guid: af8289a74cc7a5543a8243970a046b9f, type: 3}
       propertyPath: windForce
-      value: 5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304192751867347087, guid: af8289a74cc7a5543a8243970a046b9f, type: 3}
+      propertyPath: windInterval
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af8289a74cc7a5543a8243970a046b9f, type: 3}
