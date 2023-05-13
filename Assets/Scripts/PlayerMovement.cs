@@ -20,12 +20,12 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         originalSpeed = moveSpeed;
     }
-
+    
     private void Update()
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.AddForce(new Vector2(0, 2*moveSpeed), ForceMode2D.Impulse);
+            rb.AddForce( new Vector2(0, 10f), ForceMode2D.Impulse);
             isGrounded = false;
         }
         if (Input.GetKeyDown(KeyCode.Z) && !isDashing && !script.isSlowed)
@@ -40,26 +40,6 @@ public class PlayerMovement : MonoBehaviour
         var moveVector = (Vector2)transform.position + new Vector2(dirX, 0f);
         gameObject.transform.position = Vector2.MoveTowards(transform.position, moveVector, Time.fixedDeltaTime * moveSpeed);
         //rb.velocity += new Vector2(dirX * moveSpeed, 0f) * Time.fixedDeltaTime;
-
-    }
-    private IEnumerator Dash()
-    {
-        isDashing = true;
-        moveSpeed *= dashSpeedMultiplier;
-
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
-        rb.gravityScale = 0;
-        yield return new WaitForSeconds(dashDuration);
-        rb.gravityScale = 1;
-
-        if (!script.isSlowed)
-        {
-            moveSpeed = originalSpeed;
-        }
-        if (isGrounded)
-        {
-            isDashing = false;
-        }
         
     }
     private void OnCollisionEnter2D(Collision2D collision)
