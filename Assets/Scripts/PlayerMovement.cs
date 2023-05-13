@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashDuration = 0.2f;
     private bool isDashing;
     public bool isGrounded;
+    public bool isShielded = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -83,6 +85,12 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("kk");
             isGrounded = true;
             isDashing = false;
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (isShielded)
+                isShielded = false;
+            else SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
