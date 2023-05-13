@@ -25,11 +25,12 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         originalSpeed = moveSpeed;
+        isRight = true;
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && !isDashing)
         {
             rb.AddForce(new Vector2(0, 1f * moveSpeed), ForceMode2D.Impulse);
             isGrounded = false;
