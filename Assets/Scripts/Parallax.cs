@@ -5,13 +5,6 @@ using UnityEngine.U2D;
 
 public class Parallax : MonoBehaviour
 {
-    using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.U2D;
-
-public class Parallax : MonoBehaviour
-{
     public PixelPerfectCamera cam;
     public Transform player;
     Vector2 startPosition;
