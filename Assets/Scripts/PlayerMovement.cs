@@ -26,19 +26,15 @@ public class PlayerMovement : MonoBehaviour
         originalSpeed = moveSpeed;
         animator.SetBool("right", true);
         animator.SetBool("run", false);
+        animator.SetBool("jump", false);
     }
 
     private void Update()
     {
         if (Input.GetButtonDown("Jump") && isGrounded && !isDashing)
-        {   
-            if (!script.isSlowed)
-            {
-                rb.AddForce(new Vector2(0, 1f * originalSpeed), ForceMode2D.Impulse);
-            }
-            else {
+        {
+            animator.SetBool("jump", true);
             rb.AddForce(new Vector2(0, 1f * moveSpeed), ForceMode2D.Impulse);
-            }
             isGrounded = false;
         }
         if (Input.GetKeyDown(KeyCode.Z) && !isDashing && !script.isSlowed)
@@ -51,20 +47,21 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxisRaw("Horizontal");
         var moveVector = (Vector2)transform.position + new Vector2(dirX, 0f);
-        if (dirX > 0f)
-        {
+        if (isGrounded) { 
+            if (dirX > 0f)
+            {
             animator.SetBool("right", true);
             animator.SetBool("run", true);
-        }
-        else if (dirX < 0f)
-        {
-
-            animator.SetBool("right", false);
-            animator.SetBool("run", true);
-        }
-        else
-        {
-            animator.SetBool("run", false);
+            }
+            else if (dirX < 0f)
+            {
+                animator.SetBool("right", false);
+                animator.SetBool("run", true);
+            }
+            else
+            {
+                animator.SetBool("run", false);
+            } 
         }
 
         gameObject.transform.position = Vector2.MoveTowards(transform.position, moveVector, Time.fixedDeltaTime * moveSpeed);
@@ -103,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("kk");
             isGrounded = true;
             isDashing = false;
+            animator.SetBool("jump", false);
         }
         if (collision.gameObject.CompareTag("platform1"))
         {
