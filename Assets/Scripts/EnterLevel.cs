@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnterLevel : MonoBehaviour
 {
+    public new string name = "level2";
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,7 +14,7 @@ public class EnterLevel : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("kurwa");
-            SceneManager.LoadScene("level2");
+            SceneManager.LoadScene(name);
         }
         
     }

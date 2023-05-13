@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583c8bb1efe930946b50881ecb4b35a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  b: {fileID: 8735307172727153928, guid: 8fd076d41dfa8d1448cd0f17eeb1e33c, type: 3}
+  cutsceneTime: 2
+  b: {fileID: 8034666137000704594, guid: 8fd076d41dfa8d1448cd0f17eeb1e33c, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8028289287828922809}
   - component: {fileID: 9129316860391387902}
   - component: {fileID: -220470427397214232}
+  - component: {fileID: -8279254066027219025}
   m_Layer: 0
   m_Name: sticky
   m_TagString: Untagged
@@ -98,5 +99,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDownFactor: 0.5
-  script: {fileID: 0}
+  script: {fileID: 2496642494726463478, guid: 28da5d406d5dc35409b07b3f2797c0e2, type: 3}
   isSlowed: 0
+--- !u!61 &-8279254066027219025
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7951240627874660022}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

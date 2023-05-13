@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.AddForce(new Vector2(0, 2*moveSpeed), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 1.5f*moveSpeed), ForceMode2D.Impulse);
             isGrounded = false;
         }
         if (Input.GetKeyDown(KeyCode.Z) && !isDashing && !script.isSlowed)
@@ -95,6 +95,19 @@ public class PlayerMovement : MonoBehaviour
                 isShielded = false;
             }
             else SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("platform1"))
+        {
+            if (!script.isSlowed)
+            {
+                moveSpeed = originalSpeed;
+            }
+            Debug.Log("kk");
+            isGrounded = false;
+            isDashing = false;
         }
     }
 }

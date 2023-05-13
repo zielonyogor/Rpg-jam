@@ -98,4 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windForce: 5
-  player_rb: {fileID: 0}
+  player_rb: {fileID: 2496642494726463477, guid: 28da5d406d5dc35409b07b3f2797c0e2, type: 3}
