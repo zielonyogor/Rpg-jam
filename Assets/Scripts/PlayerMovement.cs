@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, moveSpeed*2);
+            rb.AddForce(new Vector2(0, 2*moveSpeed), ForceMode2D.Impulse);
             isGrounded = false;
         }
         if (Input.GetKeyDown(KeyCode.Z) && !isDashing && !script.isSlowed)
@@ -33,6 +33,14 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("z");
             StartCoroutine(Dash());
         }
+    }
+    private void FixedUpdate()
+    {
+        dirX = Input.GetAxisRaw("Horizontal");
+        var moveVector = (Vector2)transform.position + new Vector2(dirX, 0f);
+        gameObject.transform.position = Vector2.MoveTowards(transform.position, moveVector, Time.fixedDeltaTime * moveSpeed);
+        //rb.velocity += new Vector2(dirX * moveSpeed, 0f) * Time.fixedDeltaTime;
+
     }
     private IEnumerator Dash()
     {
@@ -54,14 +62,19 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    private void FixedUpdate()
-    {
-        dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX* moveSpeed, rb.velocity.y);
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
+        {
+            if (!script.isSlowed)
+            {
+                moveSpeed = originalSpeed;
+            }
+            Debug.Log("kk");
+            isGrounded = true;
+            isDashing = false;
+        }
+        if (collision.gameObject.CompareTag("platform1"))
         {
             if (!script.isSlowed)
             {
