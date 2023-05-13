@@ -245,6 +245,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 915352103617210031}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 264
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 512
   script: {fileID: -220470427397214232, guid: c23975d5edfbece4f8b6acc5e53a7002, type: 3}
   moveSpeed: 5
   isGrounded: 0

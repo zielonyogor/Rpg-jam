@@ -11,18 +11,24 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     public Animator animator;
+    private BoxCollider2D boxCollider2d;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask wallLayer;
+
     public stickyground script;
     public float moveSpeed = 5f;
     private float originalSpeed;
     float dirX;
     private float dashSpeedMultiplier = 3f;
     private float dashDuration = 0.2f;
-    private bool isDashing;
+    private bool isDashing = false;
     public bool isGrounded;
     public bool isShielded = false;
+    private bool canWallJump = true;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        boxCollider2d = GetComponent<BoxCollider2D>();
         originalSpeed = moveSpeed;
         animator.SetBool("right", true);
         animator.SetBool("run", false);
@@ -31,23 +37,37 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded && !isDashing)
+        if (Input.GetButtonDown("Jump") && !isDashing)
         {
-            animator.SetBool("jump", true);
-            rb.AddForce(new Vector2(0, 1f * moveSpeed), ForceMode2D.Impulse);
-            isGrounded = false;
+            if (canWallJump && IsWalled())
+            {
+                canWallJump = false;
+                animator.SetBool("jump", true);
+                rb.AddForce(new Vector2(0, 1f * moveSpeed), ForceMode2D.Impulse);
+            }
+            else if(IsGrounded())
+            {
+                animator.SetBool("jump", true);
+                rb.AddForce(new Vector2(0, 1f * moveSpeed), ForceMode2D.Impulse);
+            }
+            //isGrounded = false;
         }
         if (Input.GetKeyDown(KeyCode.Z) && !isDashing && !script.isSlowed)
         {
             Debug.Log("z");
+            isDashing = true;
             StartCoroutine(Dash());
         }
+
     }
     private void FixedUpdate()
     {
         dirX = Input.GetAxisRaw("Horizontal");
+
+        //the most precious thing my baby
         var moveVector = (Vector2)transform.position + new Vector2(dirX, 0f);
-        if (isGrounded) { 
+        
+        if (IsGrounded()) { 
             if (dirX > 0f)
             {
             animator.SetBool("right", true);
@@ -69,6 +89,28 @@ public class PlayerMovement : MonoBehaviour
         
 
     }
+
+    private bool IsGrounded()
+    {
+        float extraHeightText = .1f;
+        RaycastHit2D raycastHit = Physics2D.Raycast(boxCollider2d.bounds.center, Vector2.down, boxCollider2d.bounds.extents.y + extraHeightText, groundLayer);
+        if (raycastHit.collider != null)
+        {
+            canWallJump = true;
+            return true;
+        } return false;
+    }
+
+    private bool IsWalled()
+    {
+        float extraWidthText = .1f;
+        RaycastHit2D raycastHit = Physics2D.Raycast(boxCollider2d.bounds.center, Vector2.right, boxCollider2d.bounds.extents.x + extraWidthText, wallLayer);
+        if (raycastHit.collider != null)
+            return true;
+        raycastHit = Physics2D.Raycast(boxCollider2d.bounds.center, Vector2.left, boxCollider2d.bounds.extents.x + extraWidthText, wallLayer);
+        return raycastHit.collider != null;
+    }
+
     private IEnumerator Dash()
     {
         isDashing = true;
