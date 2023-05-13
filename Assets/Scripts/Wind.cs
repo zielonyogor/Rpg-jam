@@ -27,7 +27,7 @@ public class Wind : MonoBehaviour
     private void Blow()
     {
         Vector2 windDirection = new Vector2(-1f, 0f).normalized;
-        player_rb.AddForce(player_rb.velocity + windDirection * windForce, ForceMode2D.Impulse);
+        player_rb.AddForce(windDirection * windForce, ForceMode2D.Impulse);
         Debug.Log("kupa");
     }
 }

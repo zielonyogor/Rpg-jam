@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8452805229063468444}
   - component: {fileID: 8987018062005674949}
   - component: {fileID: 2298513654923761735}
+  - component: {fileID: 8421406551439697786}
   m_Layer: 0
   m_Name: CutScene
   m_TagString: cutscene
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8421406551439697786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075072078305920017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583c8bb1efe930946b50881ecb4b35a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b: {fileID: 8735307172727153928, guid: 8fd076d41dfa8d1448cd0f17eeb1e33c, type: 3}
