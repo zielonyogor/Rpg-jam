@@ -9,6 +9,7 @@ public class Wind : MonoBehaviour
     [SerializeField] float windForce = 5f;
     private bool isBlowing = false;
     public Rigidbody2D player_rb;
+    private bool inArea = false;
 
     private void Update()
     {
@@ -17,8 +18,9 @@ public class Wind : MonoBehaviour
         {
             windTimer = 0f;
             isBlowing = !isBlowing;
-            if (isBlowing)
+            if (isBlowing && inArea)
             {
+                Debug.Log("pipa");
                 Blow();
             }
         }
@@ -29,5 +31,21 @@ public class Wind : MonoBehaviour
         Vector2 windDirection = new Vector2(-1f, 0f).normalized;
         player_rb.AddForce(windDirection * windForce, ForceMode2D.Impulse);
         Debug.Log("kupa");
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inArea = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+       if (other.CompareTag("Player"))
+        {
+            inArea = false;
+        }
     }
 }
