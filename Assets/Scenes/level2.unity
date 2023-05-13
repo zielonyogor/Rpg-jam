@@ -404,9 +404,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2496642494726463243, guid: 28da5d406d5dc35409b07b3f2797c0e2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496642494726463243, guid: 28da5d406d5dc35409b07b3f2797c0e2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496642494726463243, guid: 28da5d406d5dc35409b07b3f2797c0e2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 683913701, guid: f58081df16baaa44596cbd6e19d5ae15, type: 3}
+      objectReference: {fileID: 1274258142, guid: 34a4d4501fd44fc4aa9f59b25d8b1635, type: 3}
     - target: {fileID: 2496642494726463476, guid: 28da5d406d5dc35409b07b3f2797c0e2, type: 3}
       propertyPath: m_Size.x
       value: 0.64
@@ -702,7 +710,7 @@ Animator:
   m_GameObject: {fileID: 20258046}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c69c0d41789e87a4da3fbcabb8237e64, type: 2}
+  m_Controller: {fileID: 9100000, guid: d40b44aebd459f749bc36bbc6100eef5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
