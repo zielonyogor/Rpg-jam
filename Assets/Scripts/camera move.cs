@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class cameramove : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public List<CinemachineVirtualCamera> vcams = new List<CinemachineVirtualCamera>();
+
     void Start()
     {
         
