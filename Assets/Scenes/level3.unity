@@ -330,11 +330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9121627851152302052, guid: 976349437dc605d4c8ed0feb02f27227, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00018337817
+      value: -0.00018338345
       objectReference: {fileID: 0}
     - target: {fileID: 9121627851152302052, guid: 976349437dc605d4c8ed0feb02f27227, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000054964044
+      value: -0.000005496563
       objectReference: {fileID: 0}
     - target: {fileID: 9121627851645532360, guid: 976349437dc605d4c8ed0feb02f27227, type: 3}
       propertyPath: m_LocalPosition.x
@@ -358,11 +358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9121627851645532360, guid: 976349437dc605d4c8ed0feb02f27227, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00018337817
+      value: -0.00018338345
       objectReference: {fileID: 0}
     - target: {fileID: 9121627851645532360, guid: 976349437dc605d4c8ed0feb02f27227, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000054964044
+      value: -0.000005496563
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 976349437dc605d4c8ed0feb02f27227, type: 3}
@@ -937,6 +937,10 @@ PrefabInstance:
     - target: {fileID: 5873625140012853461, guid: c26dc6776f54d4d43a56219d75b97264, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5873625140012853462, guid: c26dc6776f54d4d43a56219d75b97264, type: 3}
+      propertyPath: name
+      value: level3_cutscene
       objectReference: {fileID: 0}
     - target: {fileID: 5873625140012853481, guid: c26dc6776f54d4d43a56219d75b97264, type: 3}
       propertyPath: m_Name
@@ -4006,6 +4010,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 55731651}
     - target: {fileID: 8245576028347424882, guid: dd9da094803b9c24aa3e728211749801, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 55731650}
+    - target: {fileID: 8771076705320210996, guid: dd9da094803b9c24aa3e728211749801, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 55731651}
+    - target: {fileID: 8771076705320210996, guid: dd9da094803b9c24aa3e728211749801, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 55731650}
