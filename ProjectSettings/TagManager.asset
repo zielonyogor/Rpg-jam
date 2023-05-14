@@ -11,6 +11,7 @@ TagManager:
   - cutscene
   - Big
   - Wall
+  - resetbutton
   layers:
   - Default
   - TransparentFX
