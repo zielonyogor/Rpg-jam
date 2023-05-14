@@ -377,6 +377,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6643745327265256131, guid: 976349437dc605d4c8ed0feb02f27227, type: 3}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9121627850571790928, guid: 976349437dc605d4c8ed0feb02f27227, type: 3}
       propertyPath: m_Name
       value: Player Full
