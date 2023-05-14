@@ -43,12 +43,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 canWallJump = false;
                 animator.SetBool("jump", true);
-                rb.AddForce(new Vector2(0, 1f * moveSpeed), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, 0.9f * moveSpeed), ForceMode2D.Impulse);
             }
             else if(IsGrounded())
             {
                 animator.SetBool("jump", true);
-                rb.AddForce(new Vector2(0, 1f * moveSpeed), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, 0.9f * moveSpeed), ForceMode2D.Impulse);
             }
             //isGrounded = false;
         }
@@ -67,15 +67,19 @@ public class PlayerMovement : MonoBehaviour
         //the most precious thing my baby
         var moveVector = (Vector2)transform.position + new Vector2(dirX, 0f);
         
-        if (IsGrounded()) { 
-            if (dirX > 0f)
+        if (dirX > 0f)
             {
-            animator.SetBool("right", true);
-            animator.SetBool("run", true);
+                animator.SetBool("right", true);
             }
-            else if (dirX < 0f)
+        else if (dirX < 0f)
             {
                 animator.SetBool("right", false);
+            }
+
+        if (IsGrounded()) {
+
+            if (dirX != 0f)
+            {
                 animator.SetBool("run", true);
             }
             else
@@ -96,9 +100,12 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.Raycast(boxCollider2d.bounds.center, Vector2.down, boxCollider2d.bounds.extents.y + extraHeightText, groundLayer);
         if (raycastHit.collider != null)
         {
+            animator.SetBool("jump", false);
             canWallJump = true;
             return true;
-        } return false;
+        }
+        animator.SetBool("jump", true);
+        return false;
     }
 
     private bool IsWalled()
@@ -139,18 +146,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 moveSpeed = originalSpeed;
             }
-            Debug.Log("kk");
             isGrounded = true;
             isDashing = false;
-            animator.SetBool("jump", false);
+            
         }
         if (collision.gameObject.CompareTag("platform1"))
         {
+            
             if (!script.isSlowed)
             {
                 moveSpeed = originalSpeed;
             }
-            Debug.Log("kk");
             isGrounded = true;
             isDashing = false;
         }
@@ -158,7 +164,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isShielded)
             {
-                Debug.Log("rucham ci stara");
                 rb.AddForce(new Vector2(0f,originalSpeed), ForceMode2D.Impulse);
                 isShielded = false;
             }
