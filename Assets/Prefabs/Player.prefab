@@ -156,7 +156,7 @@ MonoBehaviour:
     m_Bits: 512
   script: {fileID: -220470427397214232, guid: c23975d5edfbece4f8b6acc5e53a7002, type: 3}
   moveSpeed: 5
-  isGrounded: 0
+  jumpForce: 0
   isShielded: 0
 --- !u!95 &915352103617210031
 Animator:

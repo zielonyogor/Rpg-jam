@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        jumpForce = 0.9f * moveSpeed;
         if (Input.GetButtonDown("Jump"))
         {
             if (canWallJump && IsWalled())
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             }
             //isGrounded = false;
         }
-        if (Input.GetKeyDown(KeyCode.Z) && !isDashing && !script.isSlowed)
+        if (Input.GetKeyDown(KeyCode.Z) && !isDashing)
         {
             Debug.Log("z");
             isDashing = true;
@@ -135,15 +136,30 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
         moveSpeed *= dashSpeedMultiplier;
 
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
-        rb.gravityScale = 0;
+        RaycastHit2D raycastHit = Physics2D.Raycast(boxCollider2d.bounds.center, Vector2.right, boxCollider2d.bounds.extents.x + transform.position.x + moveSpeed, wallLayer);
+        if (raycastHit.collider != null)
+        {
+            isDashing = false;
+            moveSpeed = originalSpeed;
+            Debug.Log("rucham ci matke");
+            yield return new WaitForSeconds(dashDuration);
+            yield break;
+        }
+        raycastHit = Physics2D.Raycast(boxCollider2d.bounds.center, Vector2.left, boxCollider2d.bounds.extents.x + transform.position.x + moveSpeed, wallLayer);
+        if (raycastHit.collider != null)
+        {
+            isDashing = false;
+            moveSpeed = originalSpeed;
+            Debug.Log("rucham ci matke");
+            yield return new WaitForSeconds(dashDuration);
+            yield break;
+        }
+        Debug.Log("essa");
+        //rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.gravityScale = 0; // No collision, continue the dash
         yield return new WaitForSeconds(dashDuration);
         rb.gravityScale = 1;
-
-        if (!script.isSlowed)
-        {
-            moveSpeed = originalSpeed;
-        }
+        moveSpeed = originalSpeed;
         if (IsGrounded())
         {
             isDashing = false;
