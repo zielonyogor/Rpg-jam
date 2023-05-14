@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
     guid: 3b439ec03c239ba42899bceb61043105
   - enabled: 1
-    path: Assets/Scenes/Intro.unity
+    path: Assets/Scripts/Intro.unity
     guid: b20dfb7387e921044a231f65c389cb68
   - enabled: 1
     path: Assets/Scenes/level1.unity
@@ -44,4 +44,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level2_1.unity
     guid: 258365ffc0804d842a47f08375b9e3f8
+  - enabled: 1
+    path: Assets/Scenes/level3_end.unity
+    guid: d94404f0baf384f48a483c70dd08fd3a
+  - enabled: 1
+    path: Assets/Scenes/level3_1.unity
+    guid: 96f3a106d6329044fa31d5f5a51d46b3
+  - enabled: 1
+    path: Assets/Scenes/level3_cutscene.unity
+    guid: 1f94dfe4204e5be4e85c1cdb2c896ddf
   m_configObjects: {}
