@@ -28,10 +28,10 @@ public class stickyground : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         isSlowed = false;
-        if (script.isGrounded)
-        {
-            script.moveSpeed = startingSpeed;
-        }
+        //if (script.isGrounded)
+        //{
+        //    script.moveSpeed = startingSpeed;
+        //}
     }
 }
 

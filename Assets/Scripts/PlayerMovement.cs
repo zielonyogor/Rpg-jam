@@ -18,11 +18,11 @@ public class PlayerMovement : MonoBehaviour
     public stickyground script;
     public float moveSpeed = 5f;
     private float originalSpeed;
+    public float jumpForce;
     float dirX;
-    private float dashSpeedMultiplier = 3f;
+    private float dashSpeedMultiplier = 2f;
     private float dashDuration = 0.2f;
     private bool isDashing = false;
-    public bool isGrounded;
     public bool isShielded = false;
     private bool canWallJump = true;
     private void Start()
@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider2d = GetComponent<BoxCollider2D>();
         originalSpeed = moveSpeed;
+        jumpForce = 0.9f * originalSpeed;
         animator.SetBool("right", true);
         animator.SetBool("run", false);
         animator.SetBool("jump", false);
@@ -37,18 +38,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && !isDashing)
+        if (Input.GetButtonDown("Jump"))
         {
             if (canWallJump && IsWalled())
             {
                 canWallJump = false;
                 animator.SetBool("jump", true);
-                rb.AddForce(new Vector2(0, 0.9f * moveSpeed), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
             else if(IsGrounded())
             {
                 animator.SetBool("jump", true);
-                rb.AddForce(new Vector2(0, 0.9f * moveSpeed), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
             //isGrounded = false;
         }
@@ -66,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
         //the most precious thing my baby
         var moveVector = (Vector2)transform.position + new Vector2(dirX, 0f);
+
         
         if (dirX > 0f)
             {
@@ -76,7 +78,8 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("right", false);
             }
 
-        if (IsGrounded()) {
+        if (IsGrounded())
+        {
 
             if (dirX != 0f)
             {
@@ -85,7 +88,15 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 animator.SetBool("run", false);
-            } 
+            }
+        }
+        if (IsWalled() && !IsGrounded())
+        {
+            animator.SetBool("slide", true);
+        }
+        else
+        {
+            animator.SetBool("slide", false);
         }
 
         gameObject.transform.position = Vector2.MoveTowards(transform.position, moveVector, Time.fixedDeltaTime * moveSpeed);
@@ -102,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("jump", false);
             canWallJump = true;
+            isDashing = false;
             return true;
         }
         animator.SetBool("jump", true);
@@ -132,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = originalSpeed;
         }
-        if (isGrounded)
+        if (IsGrounded())
         {
             isDashing = false;
         }
@@ -140,26 +152,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            if (!script.isSlowed)
-            {
-                moveSpeed = originalSpeed;
-            }
-            isGrounded = true;
-            isDashing = false;
-            
-        }
-        if (collision.gameObject.CompareTag("platform1"))
-        {
-            
-            if (!script.isSlowed)
-            {
-                moveSpeed = originalSpeed;
-            }
-            isGrounded = true;
-            isDashing = false;
-        }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             if (isShielded)
@@ -168,19 +160,6 @@ public class PlayerMovement : MonoBehaviour
                 isShielded = false;
             }
             else SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("platform1"))
-        {
-            if (!script.isSlowed)
-            {
-                moveSpeed = originalSpeed;
-            }
-            Debug.Log("kk");
-            isGrounded = false;
-            isDashing = false;
         }
     }
 }
