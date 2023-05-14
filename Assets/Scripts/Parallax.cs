@@ -12,7 +12,11 @@ public class Parallax : MonoBehaviour
     float startZ;
 
     Vector2 travel => (Vector2)cam.transform.position - startPosition;
-    Vector2 parallaxFactor;
+
+    float distanceFromSubject => transform.position.z - player.position.z;
+    float clippingPlane => (cam.transform.position.z + 0.3f);
+
+    float parallaxFactor => Mathf.Abs(distanceFromSubject) / clippingPlane;
 
     public void Start()
     {
@@ -22,6 +26,7 @@ public class Parallax : MonoBehaviour
 
     public void Update()
     {
-        transform.position = startPosition + travel;
+        Vector2 newPos = startPosition - travel * parallaxFactor;
+        transform.position = new Vector3(newPos.x, newPos.y, startZ);
     }
 }
