@@ -6,7 +6,7 @@ public class stickyground : MonoBehaviour
 {
     public float slowDownFactor = 0.5f;
     public PlayerMovement script;
-    private float startingSpeed;
+    private float startingSpeed = 5f;
     private float slowedSpeed;
     public bool isSlowed;
 
@@ -19,7 +19,6 @@ public class stickyground : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            isSlowed = true;
             script.moveSpeed = slowedSpeed;
         }
     }
